@@ -1,0 +1,48 @@
+
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <nb-card>
+      <nb-card-header>Add Loan Offer</nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="loanOfferForm" (ngSubmit)="onSubmit(loanOfferForm.value)">
+          <div class="form-group row">
+            <label for="inputAmount" class="label col-sm-3 col-form-label">Amount</label>
+            <div class="col-sm-9">
+              <input type="number" nbInput fullWidth id="inputAmount" placeholder="Amount" formControlName="amount">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputScore" class="label col-sm-3 col-form-label">Minimum Score</label>
+            <div class="col-sm-9">
+              <input type="number" nbInput fullWidth id="inputScore" placeholder="Minimum Score" formControlName="minimumScore">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputInterest" class="label col-sm-3 col-form-label">Interest</label>
+            <div class="col-sm-9">
+              <input type="number" nbInput fullWidth id="inputInterest" placeholder="Interest" formControlName="interest">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputRepayPeriod" class="label col-sm-3 col-form-label">Repayment Period (days)</label>
+            <div class="col-sm-9">
+              <input type="number" nbInput fullWidth id="inputRepayPeriod" placeholder="Repayment Period (days)" formControlName="repayPeriod">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputDescription" class="label col-sm-3 col-form-label">Description</label>
+            <div class="col-sm-9">
+              <textarea nbInput fullWidth id="inputDescription" placeholder="Description" formControlName="description"></textarea>
+            </div>
+          </div>
+          <div class="form-group row justify-content-center">
+            <div class="col-sm-3">
+              <button type="submit" nbButton fullWidth status="primary">Add</button>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+</div>

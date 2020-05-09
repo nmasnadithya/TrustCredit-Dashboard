@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "trust-credit": {
+      "hosting": {
+        "ngx-admin-demo": [
+          "trust-credit"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "trust-credit"
+  }
+}

@@ -170,23 +170,26 @@ export const DEFAULT_THEME = {
       lineWidth: '4',
 
       // first line
-      firstAreaGradFrom: baseThemeVariables.bg3,
-      firstAreaGradTo: baseThemeVariables.bg3,
+      firstLineGradFrom: baseThemeVariables.primary,
+      firstLineGradTo: baseThemeVariables.primaryLight,
+
+      firstAreaGradFrom: 'rgba(51, 102, 255, 0.4)',
+      firstAreaGradTo: 'rgba(51, 102, 255, 0)',
       firstShadowLineDarkBg: 'rgba(0, 0, 0, 0)',
 
       // second line
-      secondLineGradFrom: baseThemeVariables.primary,
-      secondLineGradTo: baseThemeVariables.primary,
+      secondLineGradFrom: baseThemeVariables.danger,
+      secondLineGradTo: baseThemeVariables.dangerLight,
 
-      secondAreaGradFrom: 'rgba(51, 102, 255, 0.2)',
-      secondAreaGradTo: 'rgba(51, 102, 255, 0)',
+      secondAreaGradFrom: 'rgba(255, 61, 113, 0.4)',
+      secondAreaGradTo: 'rgba(255, 61, 113, 0)',
       secondShadowLineDarkBg: 'rgba(0, 0, 0, 0)',
 
       // third line
       thirdLineGradFrom: baseThemeVariables.success,
       thirdLineGradTo: baseThemeVariables.successLight,
 
-      thirdAreaGradFrom: 'rgba(0, 214, 143, 0.2)',
+      thirdAreaGradFrom: 'rgba(0, 214, 143, 0.4)',
       thirdAreaGradTo: 'rgba(0, 214, 143, 0)',
       thirdShadowLineDarkBg: 'rgba(0, 0, 0, 0)',
     },
@@ -202,8 +205,8 @@ export const DEFAULT_THEME = {
       axisTextColor: baseThemeVariables.fg,
 
       // first bar
-      firstLineGradFrom: baseThemeVariables.bg3,
-      firstLineGradTo: baseThemeVariables.bg3,
+      firstLineGradFrom: baseThemeVariables.danger,
+      firstLineGradTo: baseThemeVariables.danger,
       firstLineShadow: 'rgba(0, 0, 0, 0)',
 
       // second bar
@@ -220,7 +223,7 @@ export const DEFAULT_THEME = {
     orderProfitLegend: {
       firstItem: baseThemeVariables.success,
       secondItem: baseThemeVariables.primary,
-      thirdItem: baseThemeVariables.bg3,
+      thirdItem: baseThemeVariables.danger,
     },
 
     visitors: {

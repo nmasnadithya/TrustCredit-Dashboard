@@ -15,6 +15,11 @@ const routes: Routes = [{
       component: ECommerceComponent,
     },
     {
+      path: 'loan-offers',
+      loadChildren: () => import('./loan-offers/loan-offers.module')
+        .then(m => m.LoanOffersModule),
+    },
+    {
       path: 'iot-dashboard',
       component: DashboardComponent,
     },

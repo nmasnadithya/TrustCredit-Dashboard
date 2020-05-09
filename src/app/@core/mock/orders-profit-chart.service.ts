@@ -9,7 +9,7 @@ export class OrdersProfitChartService extends OrdersProfitChartData {
 
   private summary = [
     {
-      title: 'Marketplace',
+      title: 'Active',
       value: 3654,
     },
     {
