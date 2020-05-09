@@ -1,7 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 
-import { SmartTableData } from '../../../@core/data/smart-table';
 import {LoanOffer, SmartTableService} from '../../../@core/mock/smart-table.service';
 import {Subscription} from 'rxjs';
 
@@ -59,7 +58,7 @@ export class OffersTableComponent implements OnInit, OnDestroy {
   source: LocalDataSource = new LocalDataSource();
   private process: Subscription;
 
-  constructor(private service: SmartTableData, private fs: SmartTableService) {
+  constructor( private fs: SmartTableService) {
     // const data = this.service.getData();
     // this.source.load(data);
   }

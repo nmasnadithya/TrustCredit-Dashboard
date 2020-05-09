@@ -4,8 +4,7 @@ import {
   NbButtonModule,
   NbCardModule, NbCheckboxModule, NbDatepickerModule,
   NbIconModule,
-  NbInputModule, NbRadioModule, NbSelectModule,
-  NbTreeGridModule, NbUserModule,
+  NbInputModule, NbRadioModule, NbSelectModule, NbUserModule,
 } from '@nebular/theme';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 

@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { SmartTableData } from '../data/smart-table';
-import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
+import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
-import {LocalDataSource} from 'ng2-smart-table';
 
 export interface LoanOffer {
   id?: string;
@@ -23,7 +22,7 @@ export class SmartTableService extends SmartTableData {
   private loanOffersCollection: AngularFirestoreCollection<LoanOffer>;
   public offers: Observable<LoanOffer[]>;
 
-  constructor(private afs: AngularFirestore) {
+  constructor(afs: AngularFirestore) {
     super();
     this.loanOffersCollection = afs.collection<LoanOffer>('LoanOffers');
     this.offers = this.loanOffersCollection.snapshotChanges().pipe(

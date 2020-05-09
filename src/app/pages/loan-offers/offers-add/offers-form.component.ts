@@ -13,7 +13,7 @@ export class OffersFormComponent implements OnInit {
   loanOfferForm;
   private loanOffersCollection: AngularFirestoreCollection<LoanOffer>;
 
-  constructor(private formBuilder: FormBuilder, private afs: AngularFirestore) {
+  constructor(private formBuilder: FormBuilder, afs: AngularFirestore) {
     this.loanOfferForm = this.formBuilder.group({
       amount: 0,
       minimumScore: 0,
@@ -28,7 +28,6 @@ export class OffersFormComponent implements OnInit {
   }
 
   onSubmit(offerData) {
-    console.log(offerData);
     this.loanOffersCollection.add({
       bank: 'People\'s Micro Credit',
       bankImage: 'https://firebasestorage.googleapis.com/v0/b/trust-credit.appspot.com/o/banks%2Flogos%2FPeople_s_micro_credit.png?alt=media&token=7c12d60c-75f2-4358-b3ff-a6747877eebf',
