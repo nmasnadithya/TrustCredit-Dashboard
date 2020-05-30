@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { SmartTableData } from '../data/smart-table';
+import {Injectable} from '@angular/core';
+import {SmartTableData} from '../data/smart-table';
 import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
@@ -16,11 +16,24 @@ export interface LoanOffer {
   email: string;
 }
 
-@Injectable()
-export class SmartTableService extends SmartTableData {
+export interface Loan extends LoanOffer {
+  loanRequested: Date;
+  loanIssued?: Date;
+  loanSettled?: Date;
+  user: string;
+  userName: string;
+  userNic: string;
+  userBank: string;
+  userBranch: string;
+  userAccountNo: string;
+  offerId: string;
+}
 
-  private loanOffersCollection: AngularFirestoreCollection<LoanOffer>;
+@Injectable()
+export class LoanOfferTableService extends SmartTableData {
+
   public offers: Observable<LoanOffer[]>;
+  private loanOffersCollection: AngularFirestoreCollection<LoanOffer>;
 
   constructor(afs: AngularFirestore) {
     super();
@@ -29,7 +42,7 @@ export class SmartTableService extends SmartTableData {
       map((actions) => {
         return actions.map((a) => {
           const data = a.payload.doc.data();
-          return { id: a.payload.doc.id, ...data };
+          return {id: a.payload.doc.id, ...data};
         });
       }),
     );
@@ -38,12 +51,9 @@ export class SmartTableService extends SmartTableData {
   getData() {
     return this.offers;
   }
-}
 
-// export class LoanOfferDataSource extends LocalDataSource {
-//
-//   remove(element: any): Promise<any> {
-//
-//     return super.remove(element);
-//   }
-// }
+  update(item: LoanOffer) {
+    const {id, ...data} = item;
+    this.loanOffersCollection.doc(item.id).update(data);
+  }
+}

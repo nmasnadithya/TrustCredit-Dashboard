@@ -24,6 +24,8 @@ import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {ReactiveFormsModule} from '@angular/forms';
+import {AuthGuardService} from './auth-guard.service';
+import {NbEvaIconsModule} from '@nebular/eva-icons';
 
 @NgModule({
   declarations: [AppComponent],
@@ -46,8 +48,12 @@ import {ReactiveFormsModule} from '@angular/forms';
     }),
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
+    NbEvaIconsModule,
   ],
   bootstrap: [AppComponent],
+  providers: [
+    AuthGuardService,
+  ],
 })
 export class AppModule {
 }

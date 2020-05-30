@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
-import {LoanOffer} from '../../../@core/mock/smart-table.service';
+import {LoanOffer} from '../../../@core/mock/loan-offer-table.service';
 import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
 
 @Component({

@@ -1,8 +1,10 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 
-import {LoanOffer, SmartTableService} from '../../../@core/mock/smart-table.service';
+import {LoanOffer} from '../../../@core/mock/loan-offer-table.service';
 import {Subscription} from 'rxjs';
+import {AngularFirestore} from '@angular/fire/firestore';
+import {FirebaseDataSource} from '../../../@core/mock/FirebaseDataSource';
 
 @Component({
   selector: 'ngx-offers-list',
@@ -55,22 +57,23 @@ export class OffersTableComponent implements OnInit, OnDestroy {
     },
   };
 
-  source: LocalDataSource = new LocalDataSource();
+  source: FirebaseDataSource;
   private process: Subscription;
 
-  constructor( private fs: SmartTableService) {
+  constructor( private afs: AngularFirestore) {
+    this.source = new FirebaseDataSource(afs.collection<LoanOffer>('LoanOffers'));
     // const data = this.service.getData();
     // this.source.load(data);
   }
 
   ngOnInit(): void {
-    this.process = this.fs.getData().subscribe(res => {
-      this.source = new LocalDataSource(res);
-    });
+    // this.process = this.fs.getData().subscribe(res => {
+    //   this.source = new LocalDataSource(res);
+    // });
   }
 
   ngOnDestroy() {
-    this.process.unsubscribe();
+    // this.process.unsubscribe();
   }
 
   onDeleteConfirm(event): void {

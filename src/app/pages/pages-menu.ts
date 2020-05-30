@@ -2,18 +2,13 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
-    title: 'Dashboard',
-    icon: 'home-outline',
-    link: '/pages/dashboard',
-    home: true,
-  },
-  {
     title: 'Loan Offers',
     icon: 'pricetags-outline',
     children: [
       {
         title: 'Manage Offers',
         link: '/pages/loan-offers/list',
+        home: true,
       },
       {
         title: 'Add Offer',
@@ -27,7 +22,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'Manage Loans',
-        link: '/pages/layout/stepper',
+        link: '/pages/loans/list',
       },
     ],
   },

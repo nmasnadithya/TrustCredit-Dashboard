@@ -20,6 +20,11 @@ const routes: Routes = [{
         .then(m => m.LoanOffersModule),
     },
     {
+      path: 'loans',
+      loadChildren: () => import('./loans/loans.module')
+        .then(m => m.LoansModule),
+    },
+    {
       path: 'iot-dashboard',
       component: DashboardComponent,
     },
@@ -75,7 +80,7 @@ const routes: Routes = [{
     },
     {
       path: '',
-      redirectTo: 'dashboard',
+      redirectTo: 'loan-offers/list',
       pathMatch: 'full',
     },
     {
